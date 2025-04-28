@@ -1,0 +1,78 @@
+AdGuard DNS.Default, https://dns.adguard-dns.com/dns-query
+AdGuard DNS.Family Protection, https://family.adguard-dns.com/dns-query
+AdGuard DNS.Nonfiltering, https://unfiltered.adguard-dns.com/dns-query
+Ali DNS.N/A, https://dns.alidns.com/dns-query
+BebasDNS by BebasID.Default, https://dns.bebasid.com/dns-query
+BebasDNS by BebasID.Security, https://antivirus.bebasid.com/dns-query
+BebasDNS by BebasID.Family, https://internetsehat.bebasid.com/dns-query
+0ms DNS.N/A, https://0ms.dev/dns-query
+CFIEC Public DNS.N/A, https://dns.cfiec.net/dns-query
+Cisco OpenDNS.Standard, https://doh.opendns.com/dns-query
+Cisco OpenDNS.FamilyShield, https://doh.familyshield.opendns.com/dns-query
+Cisco OpenDNS.Sandbox, https://doh.sandbox.opendns.com/dns-query
+Cloudflare DNS.Standard, https://dns.cloudflare.com/dns-query
+Cloudflare DNS.Standard, https://dns.cloudflare.com/dns-query
+Cloudflare DNS.Malware blocking only, https://security.cloudflare-dns.com/dns-query
+Cloudflare DNS.Malware and adult content blocking, https://family.cloudflare-dns.com/dns-query
+DeCloudUs DNS.N/A, https://dns.decloudus.com/dns-query
+FutureDNS.Servers, https://dns.us.futuredns.eu.org/dns-query
+DNSSB.N/A, https://doh.dns.sb/dns-query
+DNSPod Public DNS.N/A, https://dns.pub/dns-query
+DNSPod Public DNS.N/A, https://sm2.doh.pub/dns-query
+Google DNS.N/A, https://dns.google/dns-query
+Hurricane Electric Public Recursor.N/A, https://ordns.he.net/dns-query
+Mullvad.Nonfiltering, https://dns.mullvad.net/dns-query
+Mullvad.Ad blocking, https://adblock.dns.mullvad.net/dns-query
+Mullvad.Ad  malware blocking, https://base.dns.mullvad.net/dns-query
+Mullvad.Ad  malware  social media blocking, https://extended.dns.mullvad.net/dns-query
+Mullvad.Ad  malware  adult  gambling blocking, https://family.dns.mullvad.net/dns-query
+Mullvad.Ad  malware  adult  gambling  social media blocking, https://all.dns.mullvad.net/dns-query
+OpenBLDnet DNS.Adaptive Filtering ADA, https://ada.openbld.net/dns-query
+OpenBLDnet DNS.Strict Filtering RIC, https://ric.openbld.net/dns-query
+Quad9 DNS.Standard, https://dns.quad9.net/dns-query
+Quad9 DNS.Unsecured, https://dns10.quad9.net/dns-query
+Quad9 DNS.ECShttpsenwikipediaorgwikiEDNSClientSubnet support, https://dns11.quad9.net/dns-query
+Quadrant Security.N/A, https://doh.qis.io/dns-query
+Rabbit DNS.Nonfiltering, https://dns.rabbitdns.org/dns-query
+Rabbit DNS.Securityfiltering, https://security.rabbitdns.org/dns-query
+Rabbit DNS.Familyfiltering, https://family.rabbitdns.org/dns-query
+360 Secure DNS.N/A, https://doh.360.cn/dns-query
+Wikimedia DNS.N/A, https://wikimedia-dns.org/dns-query
+CIRA Canadian Shield DNS.Private, https://private.canadianshield.cira.ca/dns-query
+CIRA Canadian Shield DNS.Protected, https://protected.canadianshield.cira.ca/dns-query
+CIRA Canadian Shield DNS.Family, https://family.canadianshield.cira.ca/dns-query
+Digitale Gesellschaft DNS.N/A, https://dns.digitale-gesellschaft.ch/dns-query
+DNS for Family.N/A, https://dns-doh.dnsforfamily.com/dns-query
+Fondation Restena DNS.N/A, https://kaitain.restena.lu/dns-query
+IIJJP DNS.N/A, https://public.dns.iij.jp/dns-query
+JupitrDNS.N/A, https://dns.jupitrdns.com/dns-query
+LibreDNS.N/A, https://doh.libredns.gr/dns-query
+OneDNS.Pure Edition, https://doh-pure.onedns.net/dns-query
+OneDNS.Block Edition, https://doh.onedns.net/dns-query
+Quad101.N/A, https://dns.twnic.tw/dns-query
+SWITCH DNS.N/A, https://dns.switch.ch/dns-query
+UK DNS Privacy Project.N/A, https://resolver.dnsprivacy.org.uk/dns-query
+Xstl DNS.SK Broadband, https://dns.seia.io/dns-query
+Xstl DNS.Oracle Cloud South Korea, https://secondary.dns.seia.io/dns-query
+Yandex DNS.Basic, https://common.dot.dns.yandex.net/dns-query
+Yandex DNS.Safe, https://safe.dot.dns.yandex.net/dns-query
+Yandex DNS.Family, https://family.dot.dns.yandex.net/dns-query
+AhaDNS.Netherlands, https://doh.nl.ahadns.net/dns-query
+AhaDNS.Los Angeles, https://doh.la.ahadns.net/dns-query
+Arapurayil.N/A, https://dns.arapurayil.com/dns-query
+Dandelion Sprouts Official DNS Server.N/A, https://dandelionsprout.asuscomm.com:2501/dns-query
+DNS Forge.N/A, https://dnsforge.de/dns-query
+FFMUC DNS.N/A, https://doh.ffmuc.net/dns-query
+ibksturm DNS.N/A, https://ibksturm.synology.me/dns-query
+Lelux DNS.N/A, https://resolver-eu.lelux.fi/dns-query
+Marbled Fennec.N/A, https://dns.marbledfennec.net/dns-query
+momou DNS.Standard, https://dns.momou.ch/dns-query
+OSZX DNS.OSZX DNS, https://dns.oszx.co/dns-query
+OSZX DNS.PumpleX, https://dns.pumplex.com/dns-query
+PrivacyFirst DNS.Singapore DNS Server, https://doh.tiarap.org/dns-query
+PrivacyFirst DNS.Singapore DNS Server, https://doh.tiar.app/dns-query
+PrivacyFirst DNS.Japan DNS Server, https://jp.tiarap.org/dns-query
+PrivacyFirst DNS.Japan DNS Server, https://jp.tiar.app/dns-query
+BlackMagicc DNS.N/A, https://rx.techomespace.com/dns-query
+NWPSfi DNS.Standard, https://public.ns.nwps.fi/dns-query
+NWPSfi DNS.Kids, https://kids.ns.nwps.fi/dns-query

@@ -21,75 +21,84 @@ const checkButton = document.getElementById('checkButton');
 const editButton = document.getElementById('editButton');
 const topWebsites = ['google.com', 'youtube.com', 'facebook.com', 'amazon.com', 'yahoo.com', 'wikipedia.org', 'twitter.com', 'instagram.com', 'linkedin.com', 'netflix.com'];
 // Global variable to store chart instance
-const dnsServers = [{
-    name: "AdGuard", url: "https://dns.adguard-dns.com/dns-query", ips: ["94.140.14.14", "94.140.15.15"]
-}, {
-    name: "AliDNS", url: "https://dns.alidns.com/dns-query", ips: ["223.5.5.5", "223.6.6.6"]
-}, {
-    name: "OpenDNS", url: "https://doh.opendns.com/dns-query", ips: ["208.67.222.222", "208.67.220.220"]
-}, {
-    name: "CleanBrowsing",
-    url: "https://doh.cleanbrowsing.org/doh/family-filter/",
-    ips: ["185.228.168.9", "185.228.169.9"]
-}, {
-    name: "Cloudflare",
-    url: "https://cloudflare-dns.com/dns-query",
-    type: "get",
-    allowCors: true,
-    ips: ["1.1.1.1", "1.0.0.1"]
-}, {
-    name: "ControlD", url: "https://freedns.controld.com/p0", ips: ["76.76.2.0", "76.223.122.150"]
-}, {
-    name: "DNS.SB",
-    url: "https://doh.dns.sb/dns-query",
-    type: "get",
-    allowCors: true,
-    ips: ["185.222.222.222", "45.11.45.11"]
-}, {
-    name: "DNSPod",
-    url: "https://dns.pub/dns-query",
-    type: "post",
-    allowCors: false,
-    ips: ["119.29.29.29", "182.254.116.116"]
-}, {
-    name: "Google", url: "https://dns.google/resolve", type: "get", allowCors: true, ips: ["8.8.8.8", "8.8.4.4"]
-}, {
-    name: "Mullvad", url: "https://dns.mullvad.net/dns-query", ips: ["194.242.2.2", "194.242.2.2"], type: "get", allowCors: false
-}, {
-    name: "Mullvad Base", url: "https://base.dns.mullvad.net/dns-query", ips: ["194.242.2.4", "194.242.2.4"], type: "get", allowCors: false
-}, {
-    name: "NextDNS", url: "https://dns.nextdns.io", type: "get", ips: ["45.90.28.0", "45.90.30.0"]
-}, {
-    name: "OpenBLD", url: "https://ada.openbld.net/dns-query", ips: ["146.112.41.2", "146.112.41.102"]
-}, {
-    name: "DNS0.EU", url: "https://zero.dns0.eu/", ips: ["193.110.81.9", "185.253.5.9"]
-}, {
-    name: "Quad9", url: "https://dns.quad9.net/dns-query", ips: ["9.9.9.9", "149.112.112.112"]
-}, {
-    name: "360", url: "https://doh.360.cn/dns-query", ips: ["101.226.4.6", "180.163.224.54"]
-}, {
-    name: "Canadian Shield",
-    url: "https://private.canadianshield.cira.ca/dns-query",
-    ips: ["149.112.121.10", "149.112.122.10"]
-}, {
-    name: "Digitale Gesellschaft",
-    url: "https://dns.digitale-gesellschaft.ch/dns-query",
-    ips: ["185.95.218.42", "185.95.218.43"]
-}, {
-    name: "DNS for Family", url: "https://dns-doh.dnsforfamily.com/dns-query", ips: ["94.130.180.225", "78.47.64.161"]
-}, {
-    name: "Restena", url: "https://dnspub.restena.lu/dns-query", ips: ["158.64.1.29"]
-}, {
-    name: "IIJ", url: "https://public.dns.iij.jp/dns-query", ips: ["203.180.164.45", "203.180.166.45"]
-}, {
-    name: "LibreDNS", url: "https://doh.libredns.gr/dns-query", ips: ["116.202.176.26", "147.135.76.183"]
-}, {
-    name: "Switch", url: "https://dns.switch.ch/dns-query", ips: ["130.59.31.248", "130.59.31.251"]
-}, {
-    name: "Foundation for Applied Privacy", url: "https://doh.applied-privacy.net/query", ips: ["146.255.56.98"],
-}, {
-    name: "UncensoredDNS", url: "https://anycast.uncensoreddns.org/dns-query", ips: ["91.239.100.100", "89.233.43.71"]
-}];
+const dnsServers = [
+    {name: "AdGuard DNS.Default", url: "https://dns.adguard-dns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "AdGuard DNS.Family Protection", url: "https://family.adguard-dns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "AdGuard DNS.Nonfiltering", url: "https://unfiltered.adguard-dns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Ali DNS.N/A", url: "https://dns.alidns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "BebasDNS by BebasID.Default", url: "https://dns.bebasid.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "BebasDNS by BebasID.Security", url: "https://antivirus.bebasid.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "BebasDNS by BebasID.Family", url: "https://internetsehat.bebasid.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "0ms DNS.N/A", url: "https://0ms.dev/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "CFIEC Public DNS.N/A", url: "https://dns.cfiec.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Cisco OpenDNS.Standard", url: "https://doh.opendns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Cisco OpenDNS.FamilyShield", url: "https://doh.familyshield.opendns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Cisco OpenDNS.Sandbox", url: "https://doh.sandbox.opendns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Cloudflare DNS.Standard", url: "https://dns.cloudflare.com/dns-query", type: "get", allowCors: true, ips: []},
+    {name: "Cloudflare DNS.Malware blocking only", url: "https://security.cloudflare-dns.com/dns-query", type: "get", allowCors: true, ips: []},
+    {name: "Cloudflare DNS.Malware and adult content blocking", url: "https://family.cloudflare-dns.com/dns-query", type: "get", allowCors: true, ips: []},
+    {name: "DeCloudUs DNS.N/A", url: "https://dns.decloudus.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "FutureDNS.Servers", url: "https://dns.us.futuredns.eu.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "DNSSB.N/A", url: "https://doh.dns.sb/dns-query", type: "get", allowCors: true, ips: []},
+    {name: "DNSPod Public DNS.N/A", url: "https://dns.pub/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "DNSPod Public DNS.N/A", url: "https://sm2.doh.pub/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Google DNS.N/A", url: "https://dns.google/dns-query", type: "get", allowCors: true, ips: []},
+    {name: "Mullvad.Nonfiltering", url: "https://dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Mullvad.Ad blocking", url: "https://adblock.dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Mullvad.Ad malware blocking", url: "https://base.dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Mullvad.Ad malware social media blocking", url: "https://extended.dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Mullvad.Ad malware adult gambling blocking", url: "https://family.dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Mullvad.Ad malware adult gambling social media blocking", url: "https://all.dns.mullvad.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OpenBLDnet DNS.Adaptive Filtering ADA", url: "https://ada.openbld.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OpenBLDnet DNS.Strict Filtering RIC", url: "https://ric.openbld.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Quad9 DNS.Standard", url: "https://dns.quad9.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Quad9 DNS.Unsecured", url: "https://dns10.quad9.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Quad9 DNS.ECS support", url: "https://dns11.quad9.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Quadrant Security.N/A", url: "https://doh.qis.io/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Rabbit DNS.Nonfiltering", url: "https://dns.rabbitdns.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Rabbit DNS.Securityfiltering", url: "https://security.rabbitdns.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Rabbit DNS.Familyfiltering", url: "https://family.rabbitdns.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "360 Secure DNS.N/A", url: "https://doh.360.cn/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Wikimedia DNS.N/A", url: "https://wikimedia-dns.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "CIRA Canadian Shield DNS.Private", url: "https://private.canadianshield.cira.ca/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "CIRA Canadian Shield DNS.Protected", url: "https://protected.canadianshield.cira.ca/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "CIRA Canadian Shield DNS.Family", url: "https://family.canadianshield.cira.ca/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Digitale Gesellschaft DNS.N/A", url: "https://dns.digitale-gesellschaft.ch/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "DNS for Family.N/A", url: "https://dns-doh.dnsforfamily.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Fondation Restena DNS.N/A", url: "https://kaitain.restena.lu/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "IIJJP DNS.N/A", url: "https://public.dns.iij.jp/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "JupitrDNS.N/A", url: "https://dns.jupitrdns.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "LibreDNS.N/A", url: "https://doh.libredns.gr/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OneDNS.Pure Edition", url: "https://doh-pure.onedns.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OneDNS.Block Edition", url: "https://doh.onedns.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Quad101.N/A", url: "https://dns.twnic.tw/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "SWITCH DNS.N/A", url: "https://dns.switch.ch/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "UK DNS Privacy Project.N/A", url: "https://resolver.dnsprivacy.org.uk/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Xstl DNS.SK Broadband", url: "https://dns.seia.io/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Xstl DNS.Oracle Cloud South Korea", url: "https://secondary.dns.seia.io/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Yandex DNS.Basic", url: "https://common.dot.dns.yandex.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Yandex DNS.Safe", url: "https://safe.dot.dns.yandex.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Yandex DNS.Family", url: "https://family.dot.dns.yandex.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "AhaDNS.Netherlands", url: "https://doh.nl.ahadns.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "AhaDNS.Los Angeles", url: "https://doh.la.ahadns.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Arapurayil.N/A", url: "https://dns.arapurayil.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Dandelion Sprouts Official DNS Server.N/A", url: "https://dandelionsprout.asuscomm.com:2501/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "DNS Forge.N/A", url: "https://dnsforge.de/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "FFMUC DNS.N/A", url: "https://doh.ffmuc.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "ibksturm DNS.N/A", url: "https://ibksturm.synology.me/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Lelux DNS.N/A", url: "https://resolver-eu.lelux.fi/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "Marbled Fennec.N/A", url: "https://dns.marbledfennec.net/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "momou DNS.Standard", url: "https://dns.momou.ch/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OSZX DNS.OSZX DNS", url: "https://dns.oszx.co/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "OSZX DNS.PumpleX", url: "https://dns.pumplex.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "PrivacyFirst DNS.Singapore DNS Server", url: "https://doh.tiarap.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "PrivacyFirst DNS.Singapore DNS Server", url: "https://doh.tiar.app/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "PrivacyFirst DNS.Japan DNS Server", url: "https://jp.tiarap.org/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "PrivacyFirst DNS.Japan DNS Server", url: "https://jp.tiar.app/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "BlackMagicc DNS.N/A", url: "https://rx.techomespace.com/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "NWPSfi DNS.Standard", url: "https://public.ns.nwps.fi/dns-query", type: "post", allowCors: false, ips: []},
+    {name: "NWPSfi DNS.Kids", url: "https://kids.ns.nwps.fi/dns-query", type: "post", allowCors: false, ips: []}
+];
 
 let dnsChart;
 
